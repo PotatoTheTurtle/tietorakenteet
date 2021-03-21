@@ -1,41 +1,41 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Stack {
-    private int[] stack;
+    private ArrayList<String> stack;
     private int index = -1;
 
-    Stack(int size){
-        stack = new int[size];
+    Stack(){
+        stack = new ArrayList<>();
     }
 
-    void push(int number){
+    void push(String string){
         index++;
-        stack[index] = number;
+        stack.add(index, string);
     }
 
-    int pop(){
-        int out = stack[index];
-        stack[index] = 0;
+    String pop(){
+        String out = stack.remove(index);
         index--;
         return out;
     }
 
-    int peek(){
-        return stack[index];
+    String peek(){
+        return stack.get(index);
     }
 
     void printStack(){
-        System.out.println(Arrays.toString(stack));
+        System.out.println(stack);
     }
 
     public static void main(String[] args) {
-        Stack stack = new Stack(3);
+        Stack stack = new Stack();
         stack.printStack();
-        stack.push(1);
+        stack.push("1");
         stack.printStack();
-        stack.push(2);
+        stack.push("2");
         stack.printStack();
-        stack.push(3);
+        stack.push("3");
         stack.printStack();
 
         stack.pop();

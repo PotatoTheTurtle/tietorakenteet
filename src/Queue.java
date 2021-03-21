@@ -1,44 +1,30 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Queue {
-    private int[] queue;
-    private int n;
-    private int head = 0;
-    private int tail = 0;
+    private ArrayList<String> queue;
 
-    Queue(int size){
-        n = size;
-        queue = new int[size];
+    Queue(){
+        queue = new ArrayList<>();
     }
 
-    void add(int number){
-        queue[tail] = number;
-        tail++;
-        if(tail == n){
-            tail = 0;
-        }
+    void add(String string){
+        queue.add(string);
     }
 
-    int remove(){
-        int out = queue[head];
-        queue[head] = 0;
-        head++;
-
-        if(head == n){
-            head = 0;
-        }
-        return out;
+    String remove(){
+        return queue.remove(0);
     }
 
     void printQueue(){
-        System.out.println(Arrays.toString(queue));
+        System.out.println(queue);
     }
 
     public static void main(String[] args) {
-        Queue queue = new Queue(6);
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
+        Queue queue = new Queue();
+        queue.add("1");
+        queue.add("2");
+        queue.add("3");
 
         queue.printQueue();
 
@@ -46,7 +32,7 @@ public class Queue {
 
         queue.printQueue();
 
-        queue.add(4);
+        queue.add("4");
 
         queue.remove();
         queue.printQueue();
@@ -54,10 +40,10 @@ public class Queue {
         queue.printQueue();
         queue.remove();
 
-        queue.add(5);
-        queue.add(6);
-        queue.add(7);
-        queue.add(8);
+        queue.add("5");
+        queue.add("6");
+        queue.add("7");
+        queue.add("8");
         queue.printQueue();
 
         queue.remove();
