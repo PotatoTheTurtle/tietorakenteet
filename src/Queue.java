@@ -22,28 +22,12 @@ public class Queue {
 
     public static void main(String[] args) {
         Queue queue = new Queue();
-        queue.add("1");
-        queue.add("2");
-        queue.add("3");
-
         queue.printQueue();
-
-        queue.remove();
-
+        queue.add("tänään");
         queue.printQueue();
-
-        queue.add("4");
-
-        queue.remove();
+        queue.add("on");
         queue.printQueue();
-        queue.remove();
-        queue.printQueue();
-        queue.remove();
-
-        queue.add("5");
-        queue.add("6");
-        queue.add("7");
-        queue.add("8");
+        queue.add("torstai");
         queue.printQueue();
 
         queue.remove();
@@ -51,8 +35,8 @@ public class Queue {
         queue.remove();
         queue.printQueue();
         queue.remove();
-
         queue.printQueue();
+
 
     }
 

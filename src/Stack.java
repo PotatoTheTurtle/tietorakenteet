@@ -31,11 +31,11 @@ public class Stack {
     public static void main(String[] args) {
         Stack stack = new Stack();
         stack.printStack();
-        stack.push("1");
+        stack.push("tänään");
         stack.printStack();
-        stack.push("2");
+        stack.push("on");
         stack.printStack();
-        stack.push("3");
+        stack.push("tiistai");
         stack.printStack();
 
         stack.pop();
