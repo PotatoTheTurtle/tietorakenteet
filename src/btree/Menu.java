@@ -27,6 +27,8 @@ public class Menu {
 
 
         System.out.println(tree.find("test123"));
+        tree.delete("test123");
+        System.out.println(tree.find("test123"));
     }
 
     private static void printMenu() {

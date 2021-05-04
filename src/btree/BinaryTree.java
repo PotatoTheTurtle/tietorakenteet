@@ -64,7 +64,15 @@ public class BinaryTree {
         return containsNodeRecursive(root, aData);
     }
 
-    public Node deleteRecursive(Node current, String aData){
+    private String findSmallestValue(Node current) {
+        return current.left() == null ? current.getData() : findSmallestValue(current.left());
+    }
+
+    public void delete(String value){
+        root = deleteRecursive(root, value);
+    }
+
+    private Node deleteRecursive(Node current, String aData){
         if (current == null) {
             return null;
         }
@@ -81,6 +89,11 @@ public class BinaryTree {
             if (current.right() == null) {
                 return current.right();
             }
+
+            String smallestValue = findSmallestValue(current.right());
+            current.setData(smallestValue);
+            current.setRight(deleteRecursive(current.right(), smallestValue));
+            return current;
         }
 
         if (aData.length() < current.getData().length()) {
@@ -102,13 +115,5 @@ public class BinaryTree {
                 root.right().preOrder();
         }
 */
-    }
-
-    public void setLeft(Node tree) {
-        root.setLeft(tree);
-    }
-
-    public void setRight(Node tree) {
-        root.setRight(tree);
     }
 }

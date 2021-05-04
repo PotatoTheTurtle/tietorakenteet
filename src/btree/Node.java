@@ -28,6 +28,10 @@ public class Node {
         return data;
     }
 
+    public void setData(String aData) {
+        data = aData;
+    }
+
     public Node left() {
         return left;
     }
