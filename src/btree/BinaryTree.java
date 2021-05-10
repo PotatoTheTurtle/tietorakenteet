@@ -29,9 +29,9 @@ public class BinaryTree {
             return new Node(aData);
         }
 
-        if (aData.length() < current.getData().length()) {
+        if (aData.compareTo(current.getData()) < 0) {
             current.setLeft(insertRecursive(current.left(), aData));
-        }else if(aData.length() > current.getData().length()){
+        }else if(aData.compareTo(current.getData())> 0){
             current.setRight(insertRecursive(current.right(), aData));
         }else{
             return current;
@@ -52,7 +52,7 @@ public class BinaryTree {
             return current;
         }
 
-        if(aData.length() < current.getData().length()){
+        if(aData.compareTo(current.getData()) < 0){
             return containsNodeRecursive(current.left(), aData);
         }else{
             return containsNodeRecursive(current.right(), aData);
